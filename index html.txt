@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Client Requirements — cihancan424</title>
+  <!-- =========================
+       STYLES (CSS)
+       Split into styles.css if you want external files
+  ========================== -->
+  <style>
+    :root{
+      --primary:#ff6f61;      /* bright coral */
+      --primary-2:#ffb703;    /* warm amber */
+      --bg:#fff8f0;           /* soft warm background */
+      --card:#ffffff;         /* cards */
+      --ink:#222;             /* text */
+      --muted:#6b7280;        /* secondary text */
+      --ok:#10b981;           /* green tag */
+      --accent:#38bdf8;       /* sky blue */
+      --border:#f1e7da;       /* subtle border */
+    }
+    *{box-sizing:border-box}
+    body{font-family: "Segoe UI", Inter, system-ui, -apple-system, Arial, sans-serif; margin:0; color:var(--ink); background:var(--bg)}
+
+    header{
+      background: linear-gradient(90deg, var(--primary), var(--primary-2));
+      color:#fff; padding:26px 18px; box-shadow:0 6px 16px rgba(0,0,0,.12);
+    }
+    .wrap{max-width:1100px; margin:0 auto; display:flex; align-items:center; gap:14px}
+    .logo{width:54px;height:54px;border-radius:14px;background:#fff2; display:grid; place-items:center; font-weight:800}
+    .title{margin:0;font-size:24px}
+    .subtitle{margin:4px 0 0; opacity:.9; font-size:14px}
+
+    main{max-width:1100px; margin:26px auto; padding:0 18px;}
+
+    .grid{display:grid; grid-template-columns: 1.2fr .8fr; gap:18px}
+    @media (max-width: 900px){ .grid{grid-template-columns:1fr} }
+
+    .card{background:var(--card); border:1px solid var(--border); border-radius:14px; padding:18px; box-shadow:0 8px 24px rgba(0,0,0,.06)}
+    .card h2{margin:0 0 10px; color:var(--primary)}
+
+    .row{display:flex; gap:10px; flex-wrap:wrap}
+    .field{flex:1; min-width:220px}
+    .label{font-weight:700; color:#333; font-size:13px; margin-bottom:6px}
+    .value{background:#fff6; border:1px dashed var(--border); padding:10px 12px; border-radius:10px}
+
+    .tags{display:flex; gap:8px; flex-wrap:wrap}
+    .tag{padding:6px 10px; background:#fff3; border:1px solid var(--border); border-radius:999px; font-weight:600; font-size:12px}
+    .tag.us{background:#e0f2ff; border-color:#bee3ff}
+    .tag.ca{background:#fef3f2; border-color:#ffd5cf}
+    .tag.de{background:#fdf6b2; border-color:#fde68a}
+    .tag.ok{background:#ecfdf5; border-color:#d1fae5; color:#065f46}
+
+    .list{margin:0; padding-left:18px}
+    .list li{margin:8px 0}
+
+    .highlight{background:#fff3; border-left:6px solid var(--primary); padding:12px 12px; border-radius:8px}
+
+    .actions{display:flex; gap:10px; flex-wrap:wrap}
+    .btn{appearance:none; border:0; padding:10px 14px; border-radius:10px; font-weight:700; cursor:pointer; transition:.15s transform ease, .2s box-shadow ease}
+    .btn.primary{background:var(--primary); color:#fff}
+    .btn.secondary{background:#ffffff; border:1px solid var(--border)}
+    .btn:hover{transform: translateY(-1px); box-shadow:0 10px 14px rgba(0,0,0,.08)}
+
+    footer{max-width:1100px; margin:18px auto 28px; padding:0 18px; color:var(--muted); font-size:13px; text-align:center}
+    .pill{display:inline-block; padding:6px 10px; background:var(--accent); color:#012231; border-radius:999px; font-weight:800}
+
+    /* accessibility helpers */
+    :focus-visible{outline:3px solid var(--accent); outline-offset:3px}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <div class="logo">FG</div>
+      <div>
+        <h1 class="title">Client Requirements — cihancan424</h1>
+        <p class="subtitle">Industry: eCommerce · eBay Wholesale/Dropshipping · Amazon Private Label · Domain: ancigroup.com</p>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="grid">
+      <!-- LEFT: Requirements & Scope -->
+      <section class="card">
+        <h2>Project Scope</h2>
+        <div class="row">
+          <div class="field">
+            <div class="label">Objective</div>
+            <div class="value">Convert eBay dropshipping to **wholesale with stock**, focusing on **home décor ≥ $30**.</div>
+          </div>
+          <div class="field">
+            <div class="label">Procurement</div>
+            <div class="value">Bulk purchase (50–100+ units) from **US/China** → store in **own warehouse** → ship from warehouse.</div>
+          </div>
+        </div>
+
+        <h3 style="margin:16px 0 8px">Key Requirements</h3>
+        <ul class="list">
+          <li>Products must be **profitable and safe to sell** on eBay.</li>
+          <li>Prioritize **US**, **Canada**, and **Germany** markets.</li>
+          <li>Use attached top-selling dropship list to guide wholesale sourcing.</li>
+          <li>Scale listings this month: US 3,000 · Canada 3,000 · Germany 1,000.</li>
+        </ul>
+
+        <div class="highlight" id="note">Current live listings: US 2,200 · Canada 2,000 (expanding this month).</div>
+      </section>
+
+      <!-- RIGHT: Snapshot -->
+      <aside class="card">
+        <h2>Snapshot</h2>
+        <div class="row" style="margin-bottom:8px">
+          <span class="tag ok">Profitable & Safe — confirmed</span>
+        </div>
+        <div class="label">Target Markets</div>
+        <div class="tags" style="margin-bottom:12px">
+          <span class="tag us">United States</span>
+          <span class="tag ca">Canada</span>
+          <span class="tag de">Germany</span>
+        </div>
+        <div class="label">Attachments</div>
+        <div class="value" id="files">top_selling_autods_dashboard.pdf (240 KB)</div>
+        <div class="label" style="margin-top:12px">Actions</div>
+        <div class="actions">
+          <button class="btn primary" id="copy">Copy Summary</button>
+          <button class="btn secondary" id="download">Download JSON</button>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <footer>
+    <span class="pill">Executive Version</span>
+    &nbsp; · Built for eBay Wholesale Sourcing · US · CA · DE
+  </footer>
+
+  <!-- =========================
+       SCRIPT (JavaScript)
+       Split into script.js if you want external files
+  ========================== -->
+  <script>
+    const toJSON = () => ({
+      client: "cihancan424",
+      domain: "ancigroup.com",
+      industry: ["eBay Wholesale", "eBay Dropshipping", "Amazon Private Label"],
+      objective: "Convert dropshipping to wholesale with stock; home décor ≥ $30",
+      procurement: "Bulk 50–100+ units from US/China; store & ship from own warehouse",
+      profitable_safe: true,
+      markets: ["United States", "Canada", "Germany"],
+      current_listings: { us: 2200, ca: 2000 },
+      plan_this_month: { us: 3000, ca: 3000, de: 1000 },
+      attachments: ["top_selling_autods_dashboard.pdf"]
+    });
+
+    function copySummary(){
+      const summary = `CLIENT: cihancan424\nDOMAIN: ancigroup.com\nINDUSTRY: eBay Wholesale, eBay Dropshipping, Amazon Private Label\nOBJECTIVE: Convert dropshipping to wholesale with stock (home décor ≥ $30)\nPROCUREMENT: Bulk 50–100+ units from US/China; store & ship from own warehouse\nPROFITABLE & SAFE: Yes\nTARGET MARKETS: United States, Canada, Germany\nCURRENT LISTINGS: US 2,200 · CA 2,000\nPLAN (THIS MONTH): US 3,000 · CA 3,000 · DE 1,000\nATTACHMENTS: top_selling_autods_dashboard.pdf`;
+      navigator.clipboard.writeText(summary).then(()=>{
+        const note = document.getElementById('note');
+        note.textContent = 'Summary copied to clipboard!';
+        note.style.borderLeftColor = '#10b981';
+      }).catch(()=>alert('Clipboard permission required'));
+    }
+
+    function downloadJSON(){
+      const data = toJSON();
+      const blob = new Blob([JSON.stringify(data,null,2)], {type:'application/json'});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url; a.download = 'cihancan424_requirements.json';
+      document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url);
+    }
+
+    document.getElementById('copy').addEventListener('click', copySummary);
+    document.getElementById('download').addEventListener('click', downloadJSON);
+  </script>
+</body>
+</html>
