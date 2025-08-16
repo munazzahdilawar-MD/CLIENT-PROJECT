@@ -1,0 +1,14 @@
+// ====== Welcome Alert ======
+window.addEventListener('load', function() {
+    alert("Welcome! All client requirements have been applied with a professional look.");
+});
+
+// ====== Button Click Action ======
+function showRequirements() {
+    const messageBox = document.getElementById('extra-message');
+    messageBox.innerHTML = "📌 This project is built exactly according to the client's requirements for profitable products in USA, Canada, and Germany.";
+    messageBox.style.display = "block";
+}
+
+// ====== Dark Mode Toggle ======
+function
